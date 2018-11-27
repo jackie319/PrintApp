@@ -53,6 +53,8 @@ namespace Service
         /// <summary>
         /// 判断打印机是否缺纸
         /// 通过捕获打印机驱动的弹窗警告来判断
+        /// 只有执行打印后才可以获取到准确的状态
+        /// 执行之前的状态相当于内存里的缓存而已
         /// </summary>
         /// <returns></returns>
         public static Boolean IsPrinterOutOfPaper()
