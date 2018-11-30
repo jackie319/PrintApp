@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using System.Printing;
 using TestDll;
 using Demo;
+using Service.OutOfPaper;
 
 namespace PrintApp
 {
@@ -76,7 +77,7 @@ namespace PrintApp
         private void button2_Click(object sender, EventArgs e)
         {
             //ToolbarWindow32
-           // ProgramTest.Test();
+            // ProgramTest.Test();
             //WindowHide.GetIconList();
             //找到托盘图标
             // ProgramTest.Test();
@@ -99,8 +100,16 @@ namespace PrintApp
             //{
 
             //}
+
+
             FindWinTimer findWinTimer = new FindWinTimer();
             findWinTimer.BeginFind();
+
+
+            //PrinterStatusEvent statusEvent = new PrinterStatusEvent();
+            //CheckPrinterStatus status = new CheckPrinterStatus(statusEvent);
+            //statusEvent.Check();
+
         }
     }
 }
