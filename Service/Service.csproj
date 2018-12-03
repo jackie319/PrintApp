@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="OutOfPaper\FindWinTimer.cs" />
     <Compile Include="OutOfPaper\PrinterStatusEvent.cs" />
+    <Compile Include="OutOfPaper\ShowBox.cs" />
     <Compile Include="Tool\MouseFlag.cs" />
     <Compile Include="OutOfPaper\NotifyIcon.cs" />
     <Compile Include="Tool\Printer.cs" />

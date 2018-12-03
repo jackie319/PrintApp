@@ -103,7 +103,7 @@ namespace PrintApp
 
 
             FindWinTimer findWinTimer = new FindWinTimer();
-            findWinTimer.BeginFind();
+            findWinTimer.BeginFind(ShowBox.ShowMessageBox);
 
 
             //PrinterStatusEvent statusEvent = new PrinterStatusEvent();

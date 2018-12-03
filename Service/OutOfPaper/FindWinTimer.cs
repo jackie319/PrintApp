@@ -14,12 +14,14 @@ namespace Service
     public class FindWinTimer
     {
         private static System.Timers.Timer _SmsTimer;
-
-        public void BeginFind()
+        public delegate void ShowMessage();
+        ShowMessage _showMessage;
+        public void BeginFind(ShowMessage showMessage)
         {
             _SmsTimer = new System.Timers.Timer(1000 * 3 * 1);//TODO:先硬编码
             _SmsTimer.Elapsed += ElapsedEventHandler;
             _SmsTimer.Start();
+            _showMessage = showMessage;
         }
         public void ElapsedEventHandler(object sender, ElapsedEventArgs e)
         {
@@ -32,7 +34,8 @@ namespace Service
                     var flag = WindowsManager.IsPrinterOutOfPaper();
                     if (flag)
                     {
-                        MessageBox.Show("打印机缺纸，请装入纸张！如已装入纸张，请重启打印机！");
+                        //   MessageBox.Show("打印机缺纸，请装入纸张！如已装入纸张，请重启打印机！");
+                        _showMessage();
                     }
                 }
 
